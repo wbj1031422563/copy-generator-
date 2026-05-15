@@ -11,10 +11,9 @@ services:
       - key: PYTHON_VERSION
         value: "3.12.11"
       - key: COPYGEN_AUTH_USER
-        sync: false
+        value: admin
       - key: COPYGEN_AUTH_PASSWORD
-        sync: false
+        value: admin123456
       - key: COPYGEN_AUTH_SECRET
-        sync: false
-      - key: DEEPSEEK_API_KEY
-        sync: false
+        value: copygen-render-session-v1
+      # DEEPSEEK_API_KEY: not set — visitors add their own key in Settings > LLM

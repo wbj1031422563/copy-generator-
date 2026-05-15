@@ -103,7 +103,11 @@ set COPYGEN_AUTH_PASSWORD=你的强密码
 | **Start Command** | `uvicorn web.server:app --host 0.0.0.0 --port $PORT` |
 | **Python Version** | `3.12.11`（或依赖根目录 `.python-version`） |
 
-环境变量（Environment）至少配置：`COPYGEN_AUTH_PASSWORD`、可选 `DEEPSEEK_API_KEY` 等。  
+默认部署环境见 `deploy/render.env` / `render.yaml`：
+
+- 登录：`admin` / `admin123456`（上线后建议在 Render 控制台改强密码）
+- `DEEPSEEK_API_KEY` 不预置，用户在 **系统设置 → LLM 配置** 中自行填写
+
 SQLite 在免费实例上重启会丢失历史，正式使用建议 MySQL 或 Render 持久盘。
 
 ## 项目结构
