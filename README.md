@@ -91,6 +91,21 @@ set COPYGEN_AUTH_PASSWORD=你的强密码
 
 把账号密码发给访客即可使用系统；**源码仍在你的私有仓库**，对方只能访问网页，拿不到 Python/Vue 源文件。
 
+### 部署到 Render
+
+仓库已包含 `requirements.txt`、`render.yaml`、`.python-version`。
+
+在 Render 控制台创建 **Web Service** 并连接本仓库后，建议设置：
+
+| 项 | 值 |
+|----|-----|
+| **Build Command** | `chmod +x scripts/render_build.sh && ./scripts/render_build.sh` |
+| **Start Command** | `uvicorn web.server:app --host 0.0.0.0 --port $PORT` |
+| **Python Version** | `3.12.11`（或依赖根目录 `.python-version`） |
+
+环境变量（Environment）至少配置：`COPYGEN_AUTH_PASSWORD`、可选 `DEEPSEEK_API_KEY` 等。  
+SQLite 在免费实例上重启会丢失历史，正式使用建议 MySQL 或 Render 持久盘。
+
 ## 项目结构
 
 ```

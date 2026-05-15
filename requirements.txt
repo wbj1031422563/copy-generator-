@@ -1,0 +1,5 @@
+# Render / pip install (kept in sync with pyproject.toml)
+openai>=1.0
+fastapi>=0.115
+uvicorn[standard]>=0.34
+itsdangerous>=2.2
