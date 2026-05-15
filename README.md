@@ -95,13 +95,14 @@ set COPYGEN_AUTH_PASSWORD=你的强密码
 
 仓库已包含 `requirements.txt`、`render.yaml`、`.python-version`。
 
-在 Render 控制台创建 **Web Service** 并连接本仓库后，建议设置：
+在 Render 控制台创建 **Web Service** 并连接本仓库后，按 **`deploy/RENDER_DASHBOARD.md`** 复制配置，或：
 
 | 项 | 值 |
 |----|-----|
-| **Build Command** | `chmod +x scripts/render_build.sh && ./scripts/render_build.sh` |
-| **Start Command** | `uvicorn web.server:app --host 0.0.0.0 --port $PORT` |
-| **Python Version** | `3.12.11`（或依赖根目录 `.python-version`） |
+| **Build Command** | `pip install -r requirements.txt && cd web/frontend && npm install && npm run build` |
+| **Start Command** | `python -m uvicorn web.server:app --host 0.0.0.0 --port $PORT` |
+| **Python Version** | `3.12.11` |
+| **Environment** | `NODE_VERSION=20` |
 
 默认部署环境见 `deploy/render.env` / `render.yaml`：
 

@@ -1,19 +1,21 @@
-# Render Blueprint: https://render.com/docs/blueprint-spec
+# Render Blueprint — https://render.com/docs/blueprint-spec
+# Or copy values from deploy/RENDER_DASHBOARD.md into the Render web UI.
 services:
   - type: web
     name: copy-generator
     runtime: python
     plan: free
     branch: main
-    buildCommand: chmod +x scripts/render_build.sh && ./scripts/render_build.sh
-    startCommand: uvicorn web.server:app --host 0.0.0.0 --port $PORT
+    buildCommand: pip install -r requirements.txt && cd web/frontend && npm install && npm run build
+    startCommand: python -m uvicorn web.server:app --host 0.0.0.0 --port $PORT
     envVars:
       - key: PYTHON_VERSION
         value: "3.12.11"
+      - key: NODE_VERSION
+        value: "20"
       - key: COPYGEN_AUTH_USER
         value: admin
       - key: COPYGEN_AUTH_PASSWORD
         value: admin123456
       - key: COPYGEN_AUTH_SECRET
         value: copygen-render-session-v1
-      # DEEPSEEK_API_KEY: not set — visitors add their own key in Settings > LLM
