@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "dev:public": "vite --host 0.0.0.0 --port 6006",
     "build": "vite build",
     "typecheck": "vue-tsc -b",
     "preview": "vite preview"

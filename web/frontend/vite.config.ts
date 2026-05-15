@@ -14,9 +14,14 @@ export default defineConfig({
     emptyOutDir: true,
   },
   server: {
-    port: 5173,
+    host: true,
+    port: Number(process.env.VITE_PORT || process.env.PORT || 5173),
+    strictPort: true,
     proxy: {
-      '/api': { target: 'http://127.0.0.1:8765', changeOrigin: true },
+      '/api': {
+        target: process.env.VITE_API_PROXY || 'http://127.0.0.1:8765',
+        changeOrigin: true,
+      },
     },
   },
 })
