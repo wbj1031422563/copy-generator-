@@ -1,0 +1,24 @@
+{
+  "tone": "个人博士，专业真诚不浮夸",
+  "persona": "helper_not_agency",
+  "max_title_len": 30,
+  "max_body_len": 500,
+  "use_emoji": false,
+  "show_price": false,
+  "tech_detail_level": "high",
+  "version_count": 3,
+  "variants": {
+    "v1_standard": {
+      "description": "完整技术列举 + 服务全面介绍",
+      "style": "comprehensive"
+    },
+    "v2_concise": {
+      "description": "精简核心方向，口语化表达",
+      "style": "concise_casual"
+    },
+    "v3_case_led": {
+      "description": "以具体成果/交叉学科案例开头",
+      "style": "case_led"
+    }
+  }
+}

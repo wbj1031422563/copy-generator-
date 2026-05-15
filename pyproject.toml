@@ -1,0 +1,22 @@
+[project]
+name = "copy-generator"
+version = "0.1.0"
+description = "闲鱼学术辅导文案生成器 — 模板引擎 + LLM润色 + 防检测 + Web面板"
+requires-python = ">=3.12"
+dependencies = [
+    "openai>=1.0",
+    "fastapi>=0.115",
+    "uvicorn[standard]>=0.34",
+    "itsdangerous>=2.2",
+]
+
+[project.optional-dependencies]
+mysql = [
+    "pymysql>=1.1.0",
+]
+
+[dependency-groups]
+dev = [
+    "ruff>=0.15",
+    "pytest>=8.0",
+]

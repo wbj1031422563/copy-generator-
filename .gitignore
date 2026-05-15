@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.uv/
+*.egg-info/
+dist/
+build/
+
+# Secrets & local data
+.env
+data/llm_config.json
+data/db_config.json
+data/history.db
+
+# Node / frontend
+web/frontend/node_modules/
+web/static/dist/
+
+# IDE & OS
+.idea/
+.vscode/
+*.swp
+.DS_Store
+Thumbs.db
+
+# Outputs (optional local runs)
+outputs/*.json
+!outputs/.gitkeep

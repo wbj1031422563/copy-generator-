@@ -1,0 +1,11 @@
+{
+  "type": "sqlite",
+  "_comment_sqlite": "默认无需修改，数据保存在 data/history.db",
+
+  "_comment_mysql": "使用 MySQL 时改为 type=mysql 并填写下方字段，然后执行: uv sync --extra mysql",
+  "host": "127.0.0.1",
+  "port": 3306,
+  "user": "copygen",
+  "password": "your_password",
+  "database": "copy_generator"
+}
